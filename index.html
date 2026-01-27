@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Phone Store Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header đỏ kiểu FPT Shop -->
+  <header class="admin-header">
+    <div class="container">
+      <div class="logo">📱 <strong>PHONE STORE ADMIN</strong></div>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">Quản lý sản phẩm</a></li>
+          <li><a href="#">Báo cáo</a></li>
+          <li><a href="#">Cài đặt</a></li>
+        </ul>
+      </nav>
+      <div class="admin-actions">
+        <span>👤 Admin</span>
+        <button id="logoutBtn">Đăng xuất</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner Tết -->
+  <section class="banner">
+    <div class="container">
+      <h1>🎉 Phone tiện nghi, Tết như ý</h1>
+      <p>Quản lý sản phẩm nhanh chóng – Tận hưởng mùa Tết rực rỡ!</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Form Thêm/Sửa -->
+    <div class="form-section">
+      <h2>➕ Thêm / Sửa sản phẩm</h2>
+      <form id="phoneForm">
+        <input type="hidden" id="phoneId" />
+        <div class="form-row">
+          <div class="form-col">
+            <label>Tên sản phẩm:</label>
+            <input type="text" id="name" required placeholder="iPhone 16 Pro" />
+          </div>
+          <div class="form-col">
+            <label>Thương hiệu:</label>
+            <input type="text" id="brand" required placeholder="Apple" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-col">
+            <label>Giá (VND):</label>
+            <input type="number" id="price" min="0" required placeholder="25000000" />
+          </div>
+          <div class="form-col">
+            <label>Số lượng:</label>
+            <input type="number" id="quantity" min="0" required placeholder="10" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-col">
+            <label>Ảnh sản phẩm (URL):</label>
+            <input type="text" id="image" placeholder="https://example.com/image.jpg" />
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" id="submitBtn">✅ Lưu sản phẩm</button>
+          <button type="button" id="cancelBtn" style="display:none;">❌ Hủy</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Danh sách sản phẩm -->
+    <section class="products-section">
+      <h2>📦 Danh sách sản phẩm</h2>
+      <div id="phoneList" class="product-grid"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
